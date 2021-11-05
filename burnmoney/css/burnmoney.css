@@ -1,0 +1,28 @@
+.background-dark {
+    background-color: #262626;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.margin-top {
+    margin-top: 60px;
+}
+
+.timer {
+    font-size: 60px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.money {
+    font-size: 60px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cell {
+    display:table-cell;
+}
