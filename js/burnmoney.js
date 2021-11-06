@@ -17,21 +17,35 @@ function startTimer() {
 
         setInterval(function() {
             let timeLeft = endTime - new Date().getTime();
-            let timePast = new Date().getTime();
-            let moneySeconds = (timePast - startTime) / 1000
+            let timeCurr = new Date().getTime();
+            let timePast = timeCurr - startTime;
+            let moneySeconds = (timePast) / 1000
             let burningMoney = (salaryhour / 60) / 60
-            
+
+            //Timer
+            let minutes = timePast / (1000 * 60);
+            minutes = Math.floor(minutes);
+            let seconds = (timePast / 1000) % 60;
+            seconds = Math.round(seconds);
+            seconds = ('0' + seconds).slice(-2);
+            let text = '0'  +  minutes  +  ' : '  +  seconds;
+
+            //Money
             moneySeconds = Math.round(moneySeconds);
             burningMoney = burningMoney * moneySeconds
             burningMoney = burningMoney.toFixed(2);
 
             if (timeLeft > 0) {
-                let minutes = timeLeft / (1000 * 60);
+ /*               let minutes = timeLeft / (1000 * 60);
                 minutes = Math.floor(minutes);
                 let seconds = (timeLeft / 1000) % 60;
                 seconds = Math.round(seconds);
                 seconds = ('0' + seconds).slice(-2);
                 let text = '0'  +  minutes  +  ' : '  +  seconds;
+                //timer.innerHTML = text;
+ */               
+                
+                
                 timer.innerHTML = text;
                 money.innerHTML = burningMoney;
             } else {
